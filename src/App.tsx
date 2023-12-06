@@ -1,26 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "urql";
+import UrqlClient from "./components/UrqlClient";
+import { MantineProvider, createTheme } from "@mantine/core";
+import "@mantine/core/styles.css";
+import { PropsWithChildren } from "react";
+import MainForm from "./components/MainForm";
 
-function App() {
+const theme = createTheme({});
+
+function App({ children }: PropsWithChildren) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <MantineProvider theme={theme}>
+      <main className="bg-phantom-blue flex min-h-screen justify-center flex-col items-center">
+        {children}
+      </main>
+    </MantineProvider>
   );
 }
 
-export default App;
+function HomePage() {
+  return (
+    <App>
+      <Provider value={UrqlClient}>
+        <MainForm />
+      </Provider>
+    </App>
+  );
+}
+
+export default HomePage;

@@ -1,8 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --phantom-blue-gradient: linear-gradient(to bottom, #ECF9FF, #FFFFFF); /* define gradient variable */
+  --phantom-blue: #00B3FF;
+  --phantom-blue-darker: #1E5167;
+}
+
+html *
+{
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
