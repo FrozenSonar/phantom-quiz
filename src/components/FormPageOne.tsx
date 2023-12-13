@@ -17,7 +17,7 @@ export default function FormPageOne({ form }: FormPageOneProps) {
   const { filmsList, fetching } = useGetStarWars();
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col">
       <div
         className={
           isMobile ? "flex flex-col space-y-4" : "grid grid-cols-2 gap-4"
