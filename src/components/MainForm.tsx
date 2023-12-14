@@ -21,7 +21,6 @@ export default function MainForm() {
   const onSubmit = form.onSubmit(() => {
     form.validate();
     setDoneForm(true);
-    console.log("test")
   });
 
   return (
