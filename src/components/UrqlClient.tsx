@@ -6,4 +6,5 @@ const UrqlClient = new Client({
   exchanges: [cacheExchange, fetchExchange],
 });
 
+
 export default UrqlClient;
